@@ -1,5 +1,6 @@
 package com.cmlteam.measure;
 
+/** Piece of profiling data collected for a method call being profiled. */
 public class MethodCallStat {
 
   final String name;

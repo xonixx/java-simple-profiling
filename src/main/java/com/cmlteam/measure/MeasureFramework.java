@@ -10,6 +10,7 @@ import java.util.*;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
+/** Part of API to configure the framework. */
 public class MeasureFramework {
   private static final Logger log = LoggerFactory.getLogger(MeasureFramework.class);
 

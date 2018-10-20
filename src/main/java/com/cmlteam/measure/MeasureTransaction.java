@@ -3,6 +3,10 @@ package com.cmlteam.measure;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
+/**
+ * Represents the set of performance metrics and stats collected during single transaction
+ * (typically web request or job run).
+ */
 class MeasureTransaction {
 
   final String name;
