@@ -25,7 +25,7 @@ public class Measure {
     MeasureTransaction currentTx = getMeasureTransaction();
 
     if (currentTx != null) {
-      log.warn("Abandoned tx: " + currentTx.name);
+      log.warn("Abandoned tx: {}", currentTx.name);
     }
 
     try {

@@ -61,7 +61,7 @@ public class MeasureFramework {
       if (cntInFile <= ROTATE_AFTER_EACH) return printStream;
 
       // do rotate
-      log.debug("Rotating '" + fileName + "' after " + ROTATE_AFTER_EACH + " records...");
+      log.debug("Rotating '{}' after {} records...", fileName, ROTATE_AFTER_EACH);
       printStream.flush();
       printStream.close();
       outs.put(fileName, null);
@@ -122,11 +122,8 @@ public class MeasureFramework {
             printStream.println(measureTransaction);
             printStream.flush();
 
-            List<MeasureTransaction> transactions = transactionLists.get(txName);
-            if (transactions == null) {
-              transactions = new ArrayList<>(AGGREGATE_NUM);
-              transactionLists.put(txName, transactions);
-            }
+            List<MeasureTransaction> transactions =
+                transactionLists.computeIfAbsent(txName, k -> new ArrayList<>(AGGREGATE_NUM));
 
             transactions.add(measureTransaction);
 
